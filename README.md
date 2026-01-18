@@ -20,7 +20,11 @@ Este proyecto está pensado para **principiantes**, pero también será útil pa
 
 🎥 **Aprende a Crear MODS en Hytale**  
 👉 Playlist oficial:  
-https://youtube.com/playlist?list=PLgsAelMU67-pwasOhQkTmcsqwPOcQP6cQ&si=v0YJbNC5lewp7gkV
+<p align="center">
+  <a href="https://youtube.com/playlist?list=PLgsAelMU67-pwasOhQkTmcsqwPOcQP6cQ&si=v0YJbNC5lewp7gkV">
+    <img src="assets/imagenes/portada.jpg" alt="Playlist Hytale Modding desde CERO"/>
+  </a>
+</p>
 
 Cada carpeta de este repositorio corresponde a un **episodio de la serie**.
 
