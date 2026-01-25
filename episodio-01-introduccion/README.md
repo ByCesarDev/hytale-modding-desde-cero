@@ -170,7 +170,7 @@ Los cambios se reflejan **directamente en el juego** al volver al mundo.
 ## 📺 Video del episodio
 
 🎥 **Episodio 01 — Creando nuestro primer item en Hytale**  
-[![IMAGE ALT TEXT HERE](../assets/imagenes/portada.jpg)](https://www.youtube.com/watch?v=lHEaxneclLY)
+[![🔥 Aprende a crear MODS en Hytale desde CERO | Episodio 1: Items personalizados](../assets/imagenes/portada.jpg)](https://www.youtube.com/watch?v=lHEaxneclLY)
 
 Se recomienda **ver el video junto con el proyecto**, ya que se explica paso a paso el razonamiento detrás de cada decisión.
 
