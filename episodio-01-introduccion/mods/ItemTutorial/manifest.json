@@ -1,0 +1,20 @@
+{
+  "Group": "ByCesarKun",
+  "Name": "ItemTutorial",
+  "Version": "1.0.0",
+  "Description": "Add custom Items!",
+  "Authors": [
+    {
+      "Name": "ByCesarKun",
+      "Email": "",
+      "Url": ""
+    }
+  ],
+  "Website": "",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": []
+}
