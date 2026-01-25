@@ -1,43 +1,87 @@
-# 📦 Episodio 01 — Introducción al Modding en Hytale
+# 📦 Episodio 01 — Introducción al Modding en Hytale  
+## Creando nuestro primer item personalizado
 
-Bienvenido al **Episodio 01** de la serie **Hytale Modding desde CERO**.
+Bienvenido al **Episodio 01** de la serie **“Aprende a crear MODS en Hytale desde CERO”**.
 
-En este episodio damos los **primeros pasos reales en el modding de Hytale**, creando nuestro **primer item personalizado** y entendiendo la **estructura básica de carpetas** que utiliza un proyecto de mod.
+En este episodio damos los **primeros pasos reales en el modding de Hytale**, creando nuestro **primer item personalizado** utilizando el **Asset Editor**, y aprendiendo cómo funciona la **estructura básica de carpetas** que utiliza un mod.
 
-Este episodio es clave, ya que aquí se explican las bases sobre las que se construyen todos los mods.
+Este episodio es fundamental, ya que aquí se explican las bases que se usarán en **todos los mods** más adelante.
 
 ---
 
 ## 🎯 Objetivo del episodio
 
-- Entender la estructura base de un proyecto de mod en Hytale
-- Saber para qué sirve cada carpeta principal
-- Crear un **item personalizado sencillo**
-- Aprender cómo se organizan los recursos y los textos del servidor
+- Crear un mundo de prueba para desarrollo
+- Acceder al **Asset Editor**
+- Crear un mod desde cero
+- Entender la estructura básica de un proyecto
+- Crear un **item personalizado (espada)**
+- Configurar recursos, texturas e iconos
+- Definir textos usando el sistema de idiomas
+- Activar correctamente el mod en un mundo
 
 ---
 
 ## 🧩 ¿Qué se crea en este episodio?
 
-✅ Estructura base del proyecto  
-✅ Primer item personalizado  
-✅ Recursos básicos (imágenes / modelos)  
+✅ Mundo de desarrollo en creativo  
+✅ Mod base usando el Asset Editor  
+✅ Primer item personalizado (espada)  
+✅ Textura e icono del item  
 ✅ Archivo de idioma del servidor  
+✅ Activación correcta del mod  
+
+---
+
+## 🌍 Creación del mundo de prueba
+
+1. Se crea un **mundo creativo** de prueba.
+2. Se desactiva el tiempo para facilitar el desarrollo.
+3. Se obtienen permisos **OP** usando el comando `/op self`.
+4. Se abre el **Asset Editor** desde el menú de herramientas.
+
+Este mundo se usará **exclusivamente para desarrollo**.
+
+---
+
+## 🧱 Creación del mod en el Asset Editor
+
+1. Desde el Asset Editor se crea un nuevo **Mod Pack**.
+2. Se le asigna:
+   - Nombre del mod
+   - Autor
+   - Descripción
+3. El mod se guarda y queda listo para agregar contenido.
+
+---
+
+## 🗡 Creación del item personalizado
+
+- Se crea un nuevo **Asset de tipo Item**
+- Se copia un item base (una espada existente del juego)
+- Se define un **Unique Asset ID**
+- Se configuran:
+  - Propiedades generales
+  - Rendering
+  - Icono
+  - Rareza
+  - Nivel
+  - Calidad
+
+Este item sirve como **base para futuros items**, armas o herramientas.
 
 ---
 
 ## 📂 Estructura del proyecto
 
-La estructura utilizada en este episodio es la siguiente:
-
 ```txt
 Proyecto/
 ├── Common/
 │   └── Resources/
-│       └── (subcarpetas y elementos)
-│           ├── imágenes
-│           ├── modelos
-│           └── otros recursos básicos
+│       ├── Textures/
+│       │   └── Irons/
+│       │       └── demonic_sword.png
+│       └── Models/ (opcional, para futuros episodios)
 └── Server/
     └── Languages/
         └── en-US/
@@ -46,103 +90,104 @@ Proyecto/
 
 ---
 
-## 📁 Explicación de la estructura
+## 📁 Common/
 
-### 🔹 Common/
-Contiene todo el contenido **compartido** del mod.  
-Aquí se definen los recursos que pueden ser usados tanto por el cliente como por el servidor.
+Esta carpeta **no se crea automáticamente** y debe hacerse manualmente.
 
-#### ▸ Resources/
-Dentro de esta carpeta se almacenan los **recursos básicos del mod**, como:
-- Imágenes
+Contiene todos los recursos compartidos entre cliente y servidor:
+- Texturas
 - Modelos
-- Definiciones de items
-- Otros elementos visuales o de contenido
+- Recursos visuales
 
-La idea es mantener todo bien organizado desde el inicio para que el mod sea escalable.
-
----
-
-### 🔹 Server/
-Contiene archivos que solo afectan al **lado del servidor**.
-
-#### ▸ Languages/
-Aquí se definen los idiomas y textos que el servidor utiliza.
-
-#### ▸ en-US/
-Carpeta correspondiente al idioma inglés (Estados Unidos).  
-Más adelante se podrán agregar otros idiomas siguiendo esta misma estructura.
-
-#### ▸ server.lang
-Archivo donde se definen los textos del servidor, como:
-- Nombre del item
-- Descripciones
-- Mensajes relacionados con el mod
+> ⚠️ Si las carpetas no tienen el nombre correcto, **Hytale no las detectará**.
 
 ---
 
-## 🗡 Item creado en este episodio
+## 📁 Server / Languages
 
-En este episodio se crea un **item básico**, con el objetivo de aprender:
-- Dónde ubicar sus recursos
-- Cómo organizar su información
-- Cómo conectar el item con los archivos del proyecto
+Actualmente Hytale solo soporta el idioma **inglés (`en-US`)**.
 
-Este item servirá como base para:
-- Armas
-- Herramientas
-- Items más avanzados en futuros episodios
+### server.lang
+
+Archivo donde se definen los textos visibles del mod, como nombres y descripciones.
+
+Ejemplo:
+```txt
+items.demonic-sword.name=Demonic Sword
+```
 
 ---
 
-## ⚙️ Activación del mod en el mundo
+## 🎨 Texturas e iconos
 
-Una vez que el mod esté listo:
+- Las texturas se colocan en `Common/Resources/Textures`
+- El Asset Editor **no detecta carpetas nuevas en caliente**
+- Es necesario:
+  - Salir del mundo
+  - Volver a entrar
+  - Reabrir el Asset Editor
 
-1. Coloca el mod en la carpeta **`mods`** correspondiente.
-2. **Actívalo explícitamente en el mundo donde fue creado**.
+Esto también aplica para los **iconos del item**.
 
-> ⚠️ Es importante activar el mod únicamente en el mundo correcto para  
-> **evitar conflictos**, errores de carga o comportamientos inesperados con otros mundos o mods.
+---
 
-Este paso es fundamental durante el desarrollo y las pruebas.
+## ⚙️ Ajustes del item
+
+Desde el Asset Editor se pueden modificar:
+- Rareza
+- Nivel
+- Calidad
+- Durabilidad
+- Interacciones
+
+Los cambios se reflejan **directamente en el juego** al volver al mundo.
+
+---
+
+## 📦 Compartir el mod
+
+1. Ve a la carpeta raíz del mod.
+2. Comprímelo en un archivo `.zip`.
+3. Comparte ese archivo o colócalo en la carpeta `mods`.
+
+---
+
+## ⚠️ Activación correcta del mod
+
+> ❗ **Muy importante**
+
+- Si el mod está en la carpeta global de mods:
+  - **NO lo actives en el mundo donde fue creado**
+- Esto puede causar:
+  - Conflictos
+  - Errores
+  - Problemas de carga
+
+👉 Usa el mod en **otro mundo** o no lo actives en ese mismo mundo de desarrollo.
 
 ---
 
 ## 📺 Video del episodio
 
-🎥 **Episodio 01 — Introducción y primer item en Hytale**  
-👉 *(Agrega aquí el enlace al video cuando esté publicado)*
+🎥 **Episodio 01 — Creando nuestro primer item en Hytale**  
+👉 *(Agrega aquí el enlace cuando esté publicado)*
 
-Se recomienda **ver el video junto con el código**, ya que se explica el razonamiento detrás de cada decisión.
-
----
-
-## 🧠 Conceptos clave aprendidos
-
-- Cómo se estructura un proyecto de mod en Hytale
-- Diferencia entre contenido común y contenido del servidor
-- Importancia de una buena organización desde el inicio
-- Flujo básico de trabajo para crear contenido
-- Activación correcta de mods por mundo
+Se recomienda **ver el video junto con el proyecto**, ya que se explica paso a paso el razonamiento detrás de cada decisión.
 
 ---
 
 ## 🚀 Próximo episodio
 
-En el siguiente episodio aprenderemos a:
-- Profundizar en la creación de bloques
-- Mejorar la organización de recursos
-- Ampliar el contenido del mod
+En el siguiente episodio aprenderemos:
+- Cómo crear **bloques personalizados**
+- Uso más avanzado del Asset Editor
+- Mejor organización de recursos
 
 ---
 
-## 📌 Notas
+## 📌 Nota final
 
-> ⚠️ La estructura puede evolucionar conforme Hytale avance o cambien las herramientas oficiales,  
-> pero los conceptos aprendidos aquí seguirán siendo fundamentales.
+> La estructura puede cambiar con el desarrollo de Hytale,  
+> pero los **conceptos aprendidos aquí seguirán siendo fundamentales**.
 
----
-
-⭐ Si este episodio te ayudó, considera darle una estrella al repositorio  
-Eso apoya muchísimo el proyecto ❤️
+⭐ Si este episodio te ayudó, considera apoyar el proyecto ❤️
